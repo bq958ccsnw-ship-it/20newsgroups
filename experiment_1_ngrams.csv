@@ -1,3 +1,0 @@
-experiment,ngram_range,vocab_size,macro_f1
-unigrams,"(1, 1)",8121,0.850964025095824
-uni+bigrams,"(1, 2)",16330,0.8592131370091897
