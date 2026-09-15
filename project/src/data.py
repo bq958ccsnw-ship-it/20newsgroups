@@ -4,12 +4,6 @@ CATEGORIES = ["rec.autos", "rec.motorcycles", "misc.forsale"]
 
 
 def load_data(remove_metadata=True):
-    """
-    Загружает train/test выборки 20 Newsgroups для выбранных категорий.
-
-    remove_metadata=True убирает headers/footers/quotes, чтобы модель
-    не "читерила" по email-подписям и цитатам, а училась на содержании текста.
-    """
     remove = ("headers", "footers", "quotes") if remove_metadata else ()
 
     train = fetch_20newsgroups(
