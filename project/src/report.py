@@ -17,7 +17,6 @@ def generate_report(
     lines.append("# Результаты экспериментов\n")
     lines.append(f"_Автоматически сгенерировано: {datetime.datetime.now():%Y-%m-%d %H:%M}_\n")
 
-    # --- Baseline ---
     lines.append("## Baseline\n")
     lines.append(
         f"TF-IDF (униграммы) + LinearSVC. "
