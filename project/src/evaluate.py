@@ -4,11 +4,6 @@ from sklearn.metrics import confusion_matrix, ConfusionMatrixDisplay
 
 
 def confusion_pairs_table(y_true, y_pred, target_names):
-    """
-    Возвращает таблицу с числом ошибок для каждой пары (true, pred),
-    отсортированную по убыванию — самые частые путаницы сверху.
-    Это те самые "реальные числа" вместо общих слов "модель путает A и B".
-    """
     cm = confusion_matrix(y_true, y_pred)
     rows = []
     n = len(target_names)
@@ -40,7 +35,6 @@ def plot_confusion_matrix(y_true, y_pred, target_names, save_path=None, show=Tru
 
 
 def show_errors(texts, y_true, y_pred, target_names, n=10, max_chars=300):
-    """Печатает конкретные примеры ошибок модели."""
     errors = [
         (text, target_names[t], target_names[p])
         for text, t, p in zip(texts, y_true, y_pred)
