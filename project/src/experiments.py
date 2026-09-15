@@ -6,7 +6,6 @@ from baseline import run_baseline
 
 
 def experiment_1_ngrams():
-    """Сравнение (1,1) vs (1,2) при фиксированном C."""
     results = []
     for ngram_range, name in [((1, 1), "unigrams"), ((1, 2), "uni+bigrams")]:
         res = run_baseline(ngram_range=ngram_range, verbose=False)
@@ -21,7 +20,6 @@ def experiment_1_ngrams():
 
 
 def experiment_2_top_bigrams(top_n=15):
-    """Смотрим, какие биграммы модель считает наиболее важными для каждого класса."""
     res = run_baseline(ngram_range=(1, 2), verbose=False)
     vectorizer = res["vectorizer"]
     clf = res["model"]
@@ -41,11 +39,6 @@ def experiment_2_top_bigrams(top_n=15):
 
 
 def experiment_4_per_class_effect():
-    """
-    Проверяем, одинаково ли биграммы влияют на все три класса,
-    или эффект сильнее для конкретного класса (например, misc.forsale
-    из-за жанровых формул вроде "for sale", "best offer").
-    """
     results = []
     per_class_f1 = {}
     for ngram_range, name in [((1, 1), "unigrams"), ((1, 2), "uni+bigrams")]:
@@ -68,7 +61,6 @@ def experiment_4_per_class_effect():
 
 
 def experiment_3_regularization():
-    """Проверяем, зависит ли эффект биграмм от силы регуляризации C."""
     results = []
     for C in [0.1, 1.0, 10.0]:
         for ngram_range, name in [((1, 1), "unigrams"), ((1, 2), "uni+bigrams")]:
