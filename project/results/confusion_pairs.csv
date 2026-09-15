@@ -1,0 +1,7 @@
+true_class,predicted_as,count
+rec.motorcycles,rec.autos,67
+rec.autos,rec.motorcycles,33
+misc.forsale,rec.autos,29
+misc.forsale,rec.motorcycles,15
+rec.autos,misc.forsale,15
+rec.motorcycles,misc.forsale,9
